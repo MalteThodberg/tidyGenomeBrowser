@@ -1,0 +1,31 @@
+Package: tidyGenomeBrowser
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    DiagrammeR,
+    rtracklayer
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10),
+    GenomicRanges (>= 1.40.0),
+    InteractionSet (>= 1.16.0),
+    ggplot2 (>= 3.3.0),
+    patchwork (>= 1.0.0)
+RoxygenNote: 7.1.0
+Imports: 
+    methods (>= 4.0.0),
+    S4Vectors (>= 0.26.1),
+    IRanges (>= 2.22.2),
+    GenomeInfoDb (>= 1.24.0),
+    ggrepel (>= 0.8.2),
+    rlang (>= 0.4.6)

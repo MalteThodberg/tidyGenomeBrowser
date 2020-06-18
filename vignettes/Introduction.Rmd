@@ -1,0 +1,140 @@
+---
+title: "Introduction  to tidyGenomeBrowser"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction  to tidyGenomeBrowser}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#library(tidyGenomeBrowser)
+```
+
+# Introduction
+
+tidyGenomeBrowser makes it easy to generate genome browser figures via  R/Bioconductor. It acts as a thin layer of glue between the elaborate and efficient S4-system of Bioconductor and the widely used S3-system of the tidyverse.
+
+## Overview of functions:
+
+```{r mermaid, echo=FALSE, fig.width=10, fig.height=10, fig.cap="Overview of methods for each generic: Square = S4-object, circle = S3-object, Diamond = Random access filess"}
+DiagrammeR::mermaid("graph LR
+   TabixFile1{TabixFile}
+   TabixFileList1{TabixFileList}
+   TabixFile2{TabixFile}
+   BigWigFile{BigWigFile}
+   BigWigFileList{BigWigFileList}
+
+   GRanges1[GRanges / GPos]
+   GRanges2[GRanges / GPos]
+
+   GRangesList1[GRangesList / GPosList]
+   GRangesList2[GRangesList / GPosList]
+   GRangesList3[GRangesList]
+
+   data.frame1((data.frame))
+   data.frame2((data.frame))
+   data.frame3((data.frame))
+   data.frame4((data.frame))
+
+   ggplot1((ggplot))
+   ggplot2((ggplot))
+   ggplot3((ggplot))
+   ggplot4((ggplot))
+
+   ggplots>ggplots]
+
+   TabixFile1 --> GRanges1
+   TabixFileList1 --> GRangesList1
+   GRanges1 --> data.frame1
+   GRangesList1 --> data.frame1
+   data.frame1 --> ggplot1
+
+   BigWigFile --> GRanges2
+   BigWigFileList --> GRangesList2
+   GRanges2 --> data.frame2
+   GRangesList2 --> data.frame2
+   data.frame2 --> ggplot2
+
+   TxDB --> GRangesList3
+   GRangesList3 --> data.frame3
+   data.frame3 --> ggplot3
+
+   TabixFile2 --> GInteractions
+   GInteractions --> data.frame4
+   data.frame4 --> ggplot4
+
+   ggplot1 --> ggplots
+   ggplot2 --> ggplots
+   ggplot3 --> ggplots
+   ggplot4 --> ggplots
+
+
+
+subgraph browseTxs
+    TxDB
+    GRangesList3
+    data.frame3
+    ggplot3
+end
+
+subgraph browseInteractions
+    TabixFile2
+    GInteractions
+    data.frame4
+    ggplot4
+end
+
+subgraph browseSignal
+    BigWigFile
+    BigWigFileList
+    GRanges2
+    GRangesList2
+    data.frame2
+    ggplot2
+end
+
+subgraph browseRanges
+    TabixFile1
+    TabixFileList1
+    GRanges1
+    GRangesList1
+    data.frame1
+    ggplot1
+end
+
+subgraph browseStack
+    ggplots
+end")
+```
+
+
+## Quick start
+
+TBA
+
+## Detailed examples
+
+TBA
+
+## Internals
+
+Package-wide settings:
+
+- alpha
+- strand colors
+- interaction colors.
+
+Reserved column names:
+
+- GenomicRanges: `seqnames`, `start`, `end`, `strand`.
+- rtracklayer: `score`, `thick`, `thickStart`, `thickEnd`.
+- ggplot: `color`, `facet`.
+- IntearactionSet: `bezier`, `bezierx`, `beziery`.

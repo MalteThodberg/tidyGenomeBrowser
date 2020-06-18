@@ -1,0 +1,45 @@
+graph LR
+   TabixFile{TabixFile}
+   TabixFileList{TabixFileList}
+   BigWigFile{BigWigFile}
+   BigWigFileList{BigWigFileList}
+   data.frame((data.frame))
+   ggplot((ggplot))
+
+   TabixFile -- browseRanges --> GRanges
+   TabixFileList -- browseRanges --> GRangesList
+   GRanges -- browseRanges --> data.frame
+   GRangesList -- browseRanges --> data.frame
+   data.frame -- browseRanges --> ggplot
+
+   BigWigFile -- browseSignal --> GRanges
+   BigWigFileList -- browseSignal --> GRangesList
+   GRanges -- browseSignal --> data.frame
+   GRangesList -- browseSignal --> data.frame
+   data.frame -- browseSignal --> ggplot
+
+   TxDB -- browseTxs --> GRangesList
+   GRangesList -- browseTxs --> data.frame
+   data.frame -- browseTxs --> ggplot
+
+   GInteractions -- browseInteractions --> data.frame
+   data.frame -- browseInteractions --> ggplot
+
+subgraph Tidyverse
+    data.frame
+    ggplot
+end
+
+subgraph Ranges
+    GRangesList
+    GRanges
+    GInteractions
+end
+
+subgraph Files
+    TxDB
+    TabixFile
+    TabixFileList
+    BigWigFile
+    BigWigFileList
+end
