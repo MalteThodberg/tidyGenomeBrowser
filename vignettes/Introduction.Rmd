@@ -20,34 +20,44 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-tidyGenomeBrowser makes it easy to generate genome browser figures via  R/Bioconductor. It acts as a thin layer of glue between the elaborate and efficient S4-system of Bioconductor and the widely used S3-system of the tidyverse.
+TBA
 
-## Overview of functions:
+# Overview of functions:
+
+## Method diagram
 
 ```{r mermaid, echo=FALSE, fig.width=10, fig.height=10, fig.cap="Overview of methods for each generic: Square = S4-object, circle = S3-object, Diamond = Random access filess"}
 DiagrammeR::mermaid("graph LR
    TabixFile1{TabixFile}
    TabixFileList1{TabixFileList}
    TabixFile2{TabixFile}
+   TabixFileList3{TabixFileList}
+   TabixFile3{TabixFile}
    BigWigFile{BigWigFile}
    BigWigFileList{BigWigFileList}
 
-   GRanges1[GRanges / GPos]
+   GRanges1[GRanges]
    GRanges2[GRanges / GPos]
+   GPos[GPos]
 
-   GRangesList1[GRangesList / GPosList]
+   GRangesList1[GRangesList]
    GRangesList2[GRangesList / GPosList]
    GRangesList3[GRangesList]
+   GPosList[GPosList]
 
    data.frame1((data.frame))
    data.frame2((data.frame))
    data.frame3((data.frame))
    data.frame4((data.frame))
+   data.frame5((data.frame))
+
 
    ggplot1((ggplot))
    ggplot2((ggplot))
    ggplot3((ggplot))
    ggplot4((ggplot))
+   ggplot5((ggplot))
+
 
    ggplots>ggplots]
 
@@ -71,12 +81,17 @@ DiagrammeR::mermaid("graph LR
    GInteractions --> data.frame4
    data.frame4 --> ggplot4
 
+   TabixFile3 --> GPos
+   TabixFileList3 --> GPosList
+   GPos --> data.frame5
+   GPosList --> data.frame5
+   data.frame5 --> ggplot5
+
    ggplot1 --> ggplots
    ggplot2 --> ggplots
    ggplot3 --> ggplots
    ggplot4 --> ggplots
-
-
+   ggplot5 --> ggplots
 
 subgraph browseTxs
     TxDB
@@ -101,7 +116,7 @@ subgraph browseSignal
     ggplot2
 end
 
-subgraph browseRanges
+subgraph browseIntervals
     TabixFile1
     TabixFileList1
     GRanges1
@@ -110,29 +125,27 @@ subgraph browseRanges
     ggplot1
 end
 
+subgraph browsePositions
+    TabixFile3
+    TabixFileList3
+    GPos
+    GPosList
+    data.frame5
+    ggplot5
+end
+
 subgraph browseStack
     ggplots
 end")
 ```
 
-
-## Quick start
-
-TBA
-
-## Detailed examples
-
-TBA
-
-## Internals
-
-Package-wide settings:
+## Package-wide settings:
 
 - alpha
 - strand colors
 - interaction colors.
 
-Reserved column names:
+## Reserved column names:
 
 - GenomicRanges: `seqnames`, `start`, `end`, `strand`.
 - rtracklayer: `score`, `thick`, `thickStart`, `thickEnd`.

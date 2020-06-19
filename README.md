@@ -37,6 +37,20 @@ some common meta-columns used in Bioconductor (e.g. `score`, `pos`,
 devtools::install_github("MalteThodberg/tidyGenomeBrowser")
 ```
 
+## Overview
+
+`tidyGenomeBrowser` contains 4 major functions, each capable oof
+plotting a specific type of data:
+
+  - browseIntervals: Plots ranges or intervals, e.g. BED-like data, from
+    a `GRanges`.
+  - browseSignal: Plots a genome-wide signal, e.g. BigWig/bedGraph-like
+    data, from a `GRanges`.
+  - browserInteractions: Plots genomic interactions or contacts,
+    e.g. BEDPE-like data, from a `GInteractions`.
+  - browsePositions: Plots single-bp positions, e.g. VCF-like data, from
+    a `GPos`
+
 ## Quick start
 
 ### Required packages
@@ -50,7 +64,44 @@ library(magrittr)
 library(tidyverse)
 ```
 
+#### Plotting a single track
+
+The simplest case is just plotting data from a single object, called a
+single track:
+
+``` r
+CAGE_TCs
+#> GRanges object with 6 ranges and 2 metadata columns:
+#>       seqnames              ranges strand |     score     thick
+#>          <Rle>           <IRanges>  <Rle> | <numeric> <IRanges>
+#>   [1]    chr14 103058949-103059005      + |    145421 103058989
+#>   [2]    chr14 103059007-103059017      + |      5014 103059012
+#>   [3]    chr14 103059020-103059030      + |        55 103059025
+#>   [4]    chr14 103059456-103059488      + |       809 103059461
+#>   [5]    chr14 103121472-103121475      + |       800 103121474
+#>   [6]    chr14 103161724-103161726      + |        43 103161726
+#>   -------
+#>   seqinfo: 298 sequences from hg19 genome
+
+browseIntervals(CAGE_TCs)
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+The function will automatically set a proper plotting window in this
+case:
+
+``` r
+browseIntervals(CAGE_TCs[1:3])
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
 #### Browsing multiple types of genomic data
+
+Most often the goal is to plot multiple tracks together. This is done by
+setting up a plot region of interest, and then building a track for each
+data type.
 
 Set up plot region around a gene of interest:
 
@@ -147,7 +198,7 @@ list(contacts_track,
 #> Warning: Removed 12 rows containing missing values (geom_text_repel).
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 ### Customizing plots
 
@@ -179,9 +230,10 @@ list(contacts_track + ylab("Contacts"),
 #> Warning: Removed 12 rows containing missing values (geom_text_repel).
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
 
-Package-wide settings can also be used:
+Package-wide settings can also be used (see `?tidyGenomeBrowser` for a
+complete list):
 
 ``` r
 # Change strand colors
@@ -206,7 +258,7 @@ signal_track <- ATAC_signal %>%
 #> Plotting region size: 1000
 #> Features within region: 363
 
-# More wiggle reoom when stacking
+# More wiggle room when stacking
 options(tidyGenomeBrowser.wiggle=100)
 tc_track <- CAGE_TCs %>% 
     browseIntervals(region=promoter_window)
@@ -228,7 +280,7 @@ list(tx_track + ylab("Tx models"),
     browseStack(heights=c(1, 2, 3, 1))
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
 ### Intercepting plotting data
 
@@ -267,7 +319,20 @@ ctss_data %>%
 #> Found single-bp ranges...
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
 
 Note that no checks on the data is performed at this stage: This makes
 tidyGenomeBrowser very hackable, but you can also potentially screw up\!
+
+## Cookbook
+
+Below are some common recipes and tips & tricks for manipulating
+ggplots.
+
+### Adding highlights
+
+TBA
+
+### Adding common legend
+
+TBA
