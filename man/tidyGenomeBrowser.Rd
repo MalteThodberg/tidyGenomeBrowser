@@ -13,6 +13,7 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 \item tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
 \item tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 \item tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.
+\item tidyGenomeBrowser.curvature: Curvature of arches when scaled to distance for browseInteractions.
 \item tidyGenomeBrowser.alpha: Transparency for browseSignal and browsePositions.
 \item tidyGenomeBrowser.nudge: How much to nudge names upwards relative to the feature start in browseIntervals and browseTranscripts.
 \item tidyGenomeBrowser.wiggle: Extra distance around each feature when binning features along the Y-axis in browseIntervals, browsePosition and browseTranscripts.
@@ -20,6 +21,7 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 \item tidyGenomeBrowser.thick: Height of thick features in browseIntervals.
 \item tidyGenomeBrowser.flip: Whether to flip signal on the minus strand to negative values in browseSignal.
 \item tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
+\item tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
 \item tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 }
 }

@@ -6,6 +6,7 @@
 #' * tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
 #' * tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 #' * tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.
+#' * tidyGenomeBrowser.curvature: Curvature of arches when scaled to distance for browseInteractions.
 #' * tidyGenomeBrowser.alpha: Transparency for browseSignal and browsePositions.
 #' * tidyGenomeBrowser.nudge: How much to nudge names upwards relative to the feature start in browseIntervals and browseTranscripts.
 #' * tidyGenomeBrowser.wiggle: Extra distance around each feature when binning features along the Y-axis in browseIntervals, browsePosition and browseTranscripts.
@@ -13,6 +14,7 @@
 #' * tidyGenomeBrowser.thick: Height of thick features in browseIntervals.
 #' * tidyGenomeBrowser.flip: Whether to flip signal on the minus strand to negative values in browseSignal.
 #' * tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
+#' * tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
 #' * tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 #' @md
 #' @docType package

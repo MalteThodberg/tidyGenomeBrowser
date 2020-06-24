@@ -22,7 +22,9 @@ setMethod("browseTranscripts", signature(object = "GRangesList"),
 
               # Extract transcripts
               tx_frame <- unlist(reduce(o, min.gapwidth=1e9), use.names=FALSE)
-              tx_frame$bin <- disjointBins(tx_frame)
+              #tx_frame$bin <- disjointBins(tx_frame)
+              tx_frame$bin <- as.integer(disjointBins(tx_frame + getOption("tidyGenomeBrowser.wiggle"),
+                                               ignore.strand = TRUE))
               tx_frame$group_name <- names(o)
 
               # Coerce to data frames
@@ -108,6 +110,7 @@ setMethod("browseTranscripts", signature(object = "data.frame"),
                                                             .data$name,
                                                             NA)),
                                            nudge_y= getOption("tidyGenomeBrowser.nudge"),
+                                           size= getOption("tidyGenomeBrowser.size"),
                                            direction="x",
                                            min.segment.length=  2,
                                            #vjust = 1,
