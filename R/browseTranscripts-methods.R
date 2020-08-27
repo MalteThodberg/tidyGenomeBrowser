@@ -27,6 +27,9 @@ setMethod("browseTranscripts", signature(object = "GRangesList"),
                   # Format thickness
                   d$tx <- factor(d$tx, levels=c("Intron", "Exon", "CDS"))
 
+                  # Empty bin
+                  d$bin <- integer(0)
+
                   # Rename
                   d$name <- d$group_name
                   d$group_name <- NULL
