@@ -115,7 +115,7 @@ setMethod("browseIntervals", signature(object = "data.frame"),
                   }
 
               # Add facetting
-              if(!is.null(object$group)){
+              if(!is.null(object$facet) & nrow(object) != 0L){
                   message("Found facets...")
                   o <- o + facet_grid(facet~.)
               }

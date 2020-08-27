@@ -180,6 +180,7 @@ baits_track <- PCHiC %>%
     browseIntervals(region=gene_window)
 #> Plotting region size: 138918
 #> Features within region: 27
+#> Found facets...
 ```
 
 Plot everything together:
@@ -337,4 +338,4 @@ TBA
 
 ### Tweaking name
 
-TBA
+TBA…
