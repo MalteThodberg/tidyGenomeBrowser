@@ -6,7 +6,7 @@
 #' * tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
 #' * tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 #' * tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.
-#' * tidyGenomeBrowser.curvature: Curvature of arches when scaled to distance for browseInteractions.
+#' * tidyGenomeBrowser.expansion: How much white space to add arund track (e.g. for placing names) for browseIntervals, browseTranscripts and browsePositions.
 #' * tidyGenomeBrowser.alpha: Transparency for browseSignal and browsePositions.
 #' * tidyGenomeBrowser.nudge: How much to nudge names upwards relative to the feature start in browseIntervals and browseTranscripts.
 #' * tidyGenomeBrowser.wiggle: Extra distance around each feature when binning features along the Y-axis in browseIntervals, browsePosition and browseTranscripts.

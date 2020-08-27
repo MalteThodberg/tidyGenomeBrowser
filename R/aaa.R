@@ -7,7 +7,7 @@
                                      `*`="hotpink"),
         tidyGenomeBrowser.interactions = c(inside="forestgreen",
                                             outside="grey75"),
-        tidyGenomeBrowser.curvature=-1,
+        tidyGenomeBrowser.expansion=c(0.5, 0.5),
         tidyGenomeBrowser.alpha = 0.75,
         tidyGenomeBrowser.nudge = 0.3,
         tidyGenomeBrowser.wiggle = 0,

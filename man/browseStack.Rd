@@ -4,17 +4,19 @@
 \alias{browseStack}
 \title{Combine multiple browser images}
 \usage{
-browseStack(ggplots, strip = TRUE, ...)
+browseStack(ggplots, strip = TRUE, squeeze = FALSE, ...)
 }
 \arguments{
-\item{ggplots}{list: List of ggplots.}
+\item{ggplots}{list: List of ggplots (with identical x-axis).}
 
-\item{strip}{logical}
+\item{strip}{logical: Whether to strip x-axis of all but the bottom track.}
+
+\item{squeeze}{logical: Whether to squeeze plots together by removing vertical margins.}
 
 \item{...}{additional arguments passed to wrap_plots.}
 }
 \value{
-Vertically aligned combined plot.
+Vertically aligned combined tracks.
 }
 \description{
 Combine multiple browser images

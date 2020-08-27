@@ -171,8 +171,6 @@ contacts_track <- PCHiC %>%
     browseInteractions(region=gene_window)
 #> Plotting region size: 138918
 #> Interactions within region: 97
-#> Found interaction score: Setting arch heights to score
-#> Found scores as arch heights...
 
 # Baits
 baits_track <- PCHiC %>%
@@ -334,5 +332,9 @@ ggplots.
 TBA
 
 ### Adding common legend
+
+TBA
+
+### Tweaking name
 
 TBA

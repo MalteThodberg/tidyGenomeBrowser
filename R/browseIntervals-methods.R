@@ -129,7 +129,7 @@ setMethod("browseIntervals", signature(object = "data.frame"),
 
               # Remove y-axis
               o <- o +
-                  scale_y_continuous(expand = expansion(add = c(0.5, 0.5))) +
+                  scale_y_continuous(expand = expansion(add = getOption("tidyGenomeBrowser.expansion"))) +
                   ylab("") +
                   theme(axis.text.y = element_blank(),
                         axis.ticks.y = element_blank(),
@@ -139,7 +139,8 @@ setMethod("browseIntervals", signature(object = "data.frame"),
               # Add layout
               o <- o +
                   scale_x_continuous(labels = scales::unit_format(unit = "MB",
-                                                                  scale = 1e-6)) +
+                                                                  scale = 1e-6),
+                                     expand = expansion(add = c(0, 0))) +
                   coord_cartesian(xlim = c(start(region),
                                            end(region))) +
                   xlab(paste0(getOption("tidyGenomeBrowser.prefix"),
