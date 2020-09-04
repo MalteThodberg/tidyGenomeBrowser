@@ -1,6 +1,8 @@
 .onLoad <- function(libname, pkgname) {
     op <- options()
     op.tidyGenomeBrowser <- list(
+        tidyGenomeBrowser.breaks = 5,
+        tidyGenomeBrowser.decimals = 0.01,
         tidyGenomeBrowser.prefix = c("Genomic position on: "),
         tidyGenomeBrowser.strand = c(`+`="tomato",
                                      `-`="cornflowerblue",

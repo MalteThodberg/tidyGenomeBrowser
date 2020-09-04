@@ -141,13 +141,16 @@ setMethod("browseSignal", signature(object = "data.frame"),
 
               # Add layout
               o <- o +
-                  scale_x_continuous(labels = scales::unit_format(unit = "MB",
-                                                                  scale = 1e-6),
+                  scale_x_continuous(breaks = scales::pretty_breaks(n = getOption("tidyGenomeBrowser.breaks")),
+                                     labels = scales::unit_format(unit = "MB",
+                                                                  scale = 1e-6,
+                                                                  accuracy=getOption("tidyGenomeBrowser.decimals")),
                                      expand = expansion(add = c(0, 0))) +
                   coord_cartesian(xlim = c(start(region),
                                            end(region))) +
-                  labs(x = as.character(seqnames(region)),
-                       y = "Signal")
+                  xlab(paste0(getOption("tidyGenomeBrowser.prefix"),
+                              as.character(seqnames(region)))) +
+                  ylab("Signal")
 
               # Return
               o

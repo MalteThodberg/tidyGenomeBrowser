@@ -10,6 +10,8 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 \section{Package-wide settings}{
 
 \itemize{
+\item tidyGenomeBrowser.breaks: Number of x-axis breaks.
+\item tidyGenomeBrowser.decimals: Number of decimals on X-axis.
 \item tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
 \item tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 \item tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.

@@ -3,6 +3,8 @@
 #' To avoid too many arguments to plotting functions while still retaining flexibility, some plotting parameters can be changed using package-wide settings.
 #'
 #' @section Package-wide settings:
+#' * tidyGenomeBrowser.breaks: Number of x-axis breaks.
+#' * tidyGenomeBrowser.decimals: Number of decimals on X-axis.
 #' * tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
 #' * tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 #' * tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.
