@@ -24,6 +24,7 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 \item tidyGenomeBrowser.flip: Whether to flip signal on the minus strand to negative values in browseSignal.
 \item tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
 \item tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
+\item tidyGenomeBrowser.font: Font of text label in browseIntervals, browseTranscripts and browsePositions.
 \item tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 }
 }

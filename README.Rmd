@@ -194,12 +194,27 @@ tc_track <- CAGE_TCs %>%
 ctss_track <- CAGE_CTSSs %>% 
     browseSignal(region=promoter_window)
 
-# All tracks together
+# All tracks together and margins removed
 list(tx_track + ylab("Tx models"),
      signal_track + ylab("ATAC-Seq"),
      ctss_track + ylab("CTSSs"),
      tc_track + ylab("TCs")) %>%
     browseStack(heights=c(1, 2, 3, 1))
+```
+
+`browseStack` can also trim margins around tracks if needed:
+
+```{r, fig.height=6}
+# Save list of tracks
+plot_list <- list(tx_track + ylab("Tx models"),
+     signal_track + ylab("ATAC-Seq"),
+     ctss_track + ylab("CTSSs"),
+     tc_track + ylab("TCs"))
+
+# Plot using differente squeezings
+browseStack(plot_list, squeeze="none") + plot_annotation(title="Margins: No squeezing")
+browseStack(plot_list, squeeze="internal") + plot_annotation(title="Margins: Squeeze between plots")
+browseStack(plot_list, squeeze="all") + plot_annotation(title="Margins: Squeeze all margins")
 ```
 
 ### Intercepting plotting data ###

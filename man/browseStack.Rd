@@ -4,14 +4,16 @@
 \alias{browseStack}
 \title{Combine multiple browser images}
 \usage{
-browseStack(ggplots, strip = TRUE, squeeze = FALSE, ...)
+browseStack(ggplots, strip = TRUE, squeeze = "none", ...)
 }
 \arguments{
 \item{ggplots}{list: List of ggplots (with identical x-axis).}
 
 \item{strip}{logical: Whether to strip x-axis of all but the bottom track.}
 
-\item{squeeze}{logical: Whether to squeeze plots together by removing vertical margins.}
+\item{squeeze}{character: Whether to squeeze plots together by removing
+margins: "none" is no squeezing, "all" shrinks all margins and "internal"
+only shrink margins between plots.}
 
 \item{...}{additional arguments passed to wrap_plots.}
 }

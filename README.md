@@ -26,7 +26,7 @@ returned as `data.frame` or `ggplot` objects, it’s easy to manipulate
 them for publication grade figures.
 
 `tidyGenomeBrowser` functions take almost no arguments, but reacts to
-some common meta-columns used in Bioconductor (e.g. `score`, `pos`,
+some common meta-columns used in Bioconductor (e.g. `score`, `pos`,
 `thick`) or package-wide settings.
 
 ## Installation
@@ -271,7 +271,7 @@ ctss_track <- CAGE_CTSSs %>%
 #> Flipping signal on minus strand...
 #> Found single-bp ranges...
 
-# All tracks together
+# All tracks together and margins removed
 list(tx_track + ylab("Tx models"),
      signal_track + ylab("ATAC-Seq"),
      ctss_track + ylab("CTSSs"),
@@ -280,6 +280,33 @@ list(tx_track + ylab("Tx models"),
 ```
 
 <img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+
+`browseStack` can also trim margins around tracks if needed:
+
+``` r
+# Save list of tracks
+plot_list <- list(tx_track + ylab("Tx models"),
+     signal_track + ylab("ATAC-Seq"),
+     ctss_track + ylab("CTSSs"),
+     tc_track + ylab("TCs"))
+
+# Plot using differente squeezings
+browseStack(plot_list, squeeze="none") + plot_annotation(title="Margins: No squeezing")
+```
+
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+
+``` r
+browseStack(plot_list, squeeze="internal") + plot_annotation(title="Margins: Squeeze between plots")
+```
+
+<img src="man/figures/README-unnamed-chunk-11-2.png" width="100%" />
+
+``` r
+browseStack(plot_list, squeeze="all") + plot_annotation(title="Margins: Squeeze all margins")
+```
+
+<img src="man/figures/README-unnamed-chunk-11-3.png" width="100%" />
 
 ### Intercepting plotting data
 
@@ -318,7 +345,7 @@ ctss_data %>%
 #> Found single-bp ranges...
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
 Note that no checks on the data is performed at this stage: This makes
 tidyGenomeBrowser very hackable, but you can also potentially screw up\!

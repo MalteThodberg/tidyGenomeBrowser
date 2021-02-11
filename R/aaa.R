@@ -18,7 +18,8 @@
         tidyGenomeBrowser.flip = TRUE,
         tidyGenomeBrowser.name = TRUE,
         tidyGenomeBrowser.size = 3,
-        tidyGenomeBrowser.tx = c(Intron=0.5, Exon=2, CDS=3)
+        tidyGenomeBrowser.tx = c(Intron=0.5, Exon=2, CDS=3),
+        tidyGenomeBrowser.fontface = "plain"
     )
     toset <- !(names(op.tidyGenomeBrowser) %in% names(op))
     if(any(toset)) options(op.tidyGenomeBrowser[toset])

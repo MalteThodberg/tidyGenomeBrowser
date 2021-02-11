@@ -17,6 +17,7 @@
 #' * tidyGenomeBrowser.flip: Whether to flip signal on the minus strand to negative values in browseSignal.
 #' * tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
 #' * tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
+#' * tidyGenomeBrowser.font: Font of text label in browseIntervals, browseTranscripts and browsePositions.
 #' * tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 #' @md
 #' @docType package

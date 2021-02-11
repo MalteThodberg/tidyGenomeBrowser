@@ -100,7 +100,10 @@ setMethod("browsePositions", signature(object = "data.frame"),
                   o <- o + geom_text_repel(aes(x=.data$pos,
                                                y=.data[[y_var]],
                                                label=.data$name),
-                                           size= getOption("tidyGenomeBrowser.size"))
+                                           nudge_y = getOption("tidyGenomeBrowser.nudge"),
+                                           direction = "y",
+                                           size= getOption("tidyGenomeBrowser.size"),
+                                           fontface=getOption("tidyGenomeBrowser.fontface"))
               }
 
               # Add facetting
