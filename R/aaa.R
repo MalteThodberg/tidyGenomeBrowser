@@ -19,7 +19,11 @@
         tidyGenomeBrowser.name = TRUE,
         tidyGenomeBrowser.size = 3,
         tidyGenomeBrowser.tx = c(Intron=0.5, Exon=2, CDS=3),
-        tidyGenomeBrowser.fontface = "plain"
+        tidyGenomeBrowser.fontface = "plain",
+        tidyGenomeBrowser.label = c(size=3,
+                                    nudge=0.3,
+                                    force=0.5,
+                                    segment=2)
     )
     toset <- !(names(op.tidyGenomeBrowser) %in% names(op))
     if(any(toset)) options(op.tidyGenomeBrowser[toset])

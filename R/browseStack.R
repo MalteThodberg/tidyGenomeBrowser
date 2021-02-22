@@ -20,9 +20,10 @@ browseStack <- function(ggplots, strip=TRUE, squeeze="none", ...){
 
     squeeze <- match.arg(squeeze, choices=c("none", "internal", "all"))
 
+    l <- length(ggplots)
+
     # Remove x axis
     if(isTRUE(strip)){
-        l <- length(ggplots)
         ggplots <- c(lapply(ggplots[-l], strip_x_axis), ggplots[l])
     }
 

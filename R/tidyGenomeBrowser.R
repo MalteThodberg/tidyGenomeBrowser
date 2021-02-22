@@ -18,6 +18,7 @@
 #' * tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
 #' * tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
 #' * tidyGenomeBrowser.font: Font of text label in browseIntervals, browseTranscripts and browsePositions.
+#' * tidyGenomeBrowser.label: Size and positioning of name labels (size, y-nudging, force of repulsion between labels and length connecting line)
 #' * tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 #' @md
 #' @docType package

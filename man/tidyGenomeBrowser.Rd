@@ -25,6 +25,7 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 \item tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
 \item tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
 \item tidyGenomeBrowser.font: Font of text label in browseIntervals, browseTranscripts and browsePositions.
+\item tidyGenomeBrowser.label: Size and positioning of name labels (size, y-nudging, force of repulsion between labels and length connecting line)
 \item tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
 }
 }
