@@ -103,15 +103,15 @@ setMethod("browseIntervals", signature(object = "data.frame"),
                                                         .data$start),
                                                y = .data$bin,
                                                label=.data$name),
-                                           nudge_y = getOption("tidyGenomeBrowser.nudge"),
-                                           direction="x",
-                                           min.segment.length=2,
-                                           fontface=getOption("tidyGenomeBrowser.fontface"),
-                                           size= getOption("tidyGenomeBrowser.size"),
-                                           #vjust = 1,
-                                           #angle        = 45,
-                                           #xlim=c(0.2, 0.8),
-                                           point.padding = NA)
+                                           size = getOption("tidyGenomeBrowser.fontsize"),
+                                           nudge_y = getOption("tidyGenomeBrowser.fontnudge"),
+                                           force = getOption("tidyGenomeBrowser.fontforce"),
+                                           force_pull = getOption("tidyGenomeBrowser.fontpull"),
+                                           min.segment.length = getOption("tidyGenomeBrowser.fontsegment"),
+                                           fontface = getOption("tidyGenomeBrowser.fontface"),
+                                           box.padding = getOption("tidyGenomeBrowser.fontpad"),
+                                           point.size = NA, # Don't repulse from points
+                                           direction = "x")
 
                   }
 

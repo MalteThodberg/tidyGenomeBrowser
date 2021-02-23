@@ -9,24 +9,41 @@ To avoid too many arguments to plotting functions while still retaining flexibil
 }
 \section{Package-wide settings}{
 
+Control axes:
 \itemize{
 \item tidyGenomeBrowser.breaks: Number of x-axis breaks.
 \item tidyGenomeBrowser.decimals: Number of decimals on X-axis.
 \item tidyGenomeBrowser.prefix: Prefix to seqlevel on X-axis.
+\item tidyGenomeBrowser.expansion: How much white space to add arund track (e.g. for placing names) for browseIntervals, browseTranscripts and browsePositions.
+}
+
+Control color and transparency:
+\itemize{
 \item tidyGenomeBrowser.strand: Strand colors for plus, minus and unstranded.
 \item tidyGenomeBrowser.interactions: Colors or interactions arches inside/outside of plotting window in browseInteractions.
-\item tidyGenomeBrowser.expansion: How much white space to add arund track (e.g. for placing names) for browseIntervals, browseTranscripts and browsePositions.
 \item tidyGenomeBrowser.alpha: Transparency for browseSignal and browsePositions.
-\item tidyGenomeBrowser.nudge: How much to nudge names upwards relative to the feature start in browseIntervals and browseTranscripts.
-\item tidyGenomeBrowser.wiggle: Extra distance around each feature when binning features along the Y-axis in browseIntervals, browsePosition and browseTranscripts.
+}
+
+Control appearance:
+\itemize{
+\item tidyGenomeBrowser.size: Size of points in browsePositions.
 \item tidyGenomeBrowser.height: Height of features in browseIntervals.
 \item tidyGenomeBrowser.thick: Height of thick features in browseIntervals.
 \item tidyGenomeBrowser.flip: Whether to flip signal on the minus strand to negative values in browseSignal.
-\item tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
-\item tidyGenomeBrowser.size: Size of text label in browseIntervals, browseTranscripts and browsePositions.
-\item tidyGenomeBrowser.font: Font of text label in browseIntervals, browseTranscripts and browsePositions.
-\item tidyGenomeBrowser.label: Size and positioning of name labels (size, y-nudging, force of repulsion between labels and length connecting line)
 \item tidyGenomeBrowser.tx: Line-thickness of Intron, Exon and CDS regions in browseTranscripts.
+\item tidyGenomeBrowser.wiggle: Extra distance around each feature when binning features along the Y-axis in browseIntervals, browsePosition and browseTranscripts.
+\item tidyGenomeBrowser.name: Whether to add names to features in browseIntervals and browseTranscripts.
+}
+
+Control labels:
+\itemize{
+\item tidyGenomeBrowser.fontnudge: How much to nudge names upwards relative to the feature start.
+\item tidyGenomeBrowser.fontsize: Size of text label.
+\item tidyGenomeBrowser.fontforce: Force of repulsion between labels.
+\item tidyGenomeBrowser.fontpull: Force of attraction between points and labels.
+\item tidyGenomeBrowser.fontface: Font of text label, e.g. "italic".
+\item tidyGenomeBrowser.fontpad: Padding around label.
+\item tidyGenomeBrowser.fontsegment: Minimum length of segment between points and labels.
 }
 }
 

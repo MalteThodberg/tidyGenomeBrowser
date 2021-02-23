@@ -127,19 +127,15 @@ setMethod("browseTranscripts", signature(object = "data.frame"),
                                                label=ifelse(.data$tx == "Intron",
                                                             .data$name,
                                                             NA)),
-                                           size= getOption("tidyGenomeBrowser.label")[1],
-                                           nudge_y= getOption("tidyGenomeBrowser.label")[2],
-                                           force= getOption("tidyGenomeBrowser.label")[3],
-                                           min.segment.length= getOption("tidyGenomeBrowser.label")[4],
-                                           fontface=getOption("tidyGenomeBrowser.fontface"),
-                                           direction="x",
-                                           # nudge_y= getOption("tidyGenomeBrowser.nudge"),
-                                           # size= getOption("tidyGenomeBrowser.size"),
-                                           #min.segment.length=  2,
-                                           #vjust = 1,
-                                           #angle        = 45,
-                                           #xlim=c(0.2, 0.8),
-                                           point.padding = NA)
+                                           size = getOption("tidyGenomeBrowser.fontsize"),
+                                           nudge_y = getOption("tidyGenomeBrowser.fontnudge"),
+                                           force = getOption("tidyGenomeBrowser.fontforce"),
+                                           force_pull = getOption("tidyGenomeBrowser.fontpull"),
+                                           min.segment.length = getOption("tidyGenomeBrowser.fontsegment"),
+                                           fontface = getOption("tidyGenomeBrowser.fontface"),
+                                           box.padding = getOption("tidyGenomeBrowser.fontpad"),
+                                           point.size = NA, # Don't repulse from points
+                                           direction = "x")
 
               }else{
                   message("Skipping adding transcript names...")

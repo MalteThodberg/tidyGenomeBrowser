@@ -1,7 +1,7 @@
 Package: tidyGenomeBrowser
 Type: Package
 Title: Easy Genome Browser Figures Using R / Bioconductor
-Version: 0.1.4
+Version: 0.1.5
 Author: Malte Thodberg
 Maintainer: Malte Thodberg <maltethodberg@gmail.com>
 Description: More about what it does (maybe more than one line)
@@ -27,5 +27,5 @@ Imports:
     S4Vectors (>= 0.26.1),
     IRanges (>= 2.22.2),
     GenomeInfoDb (>= 1.24.0),
-    ggrepel (>= 0.8.2),
+    ggrepel (>= 0.9.1),
     rlang (>= 0.4.6)

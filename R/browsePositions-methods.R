@@ -87,12 +87,14 @@ setMethod("browsePositions", signature(object = "data.frame"),
                                           y= .data[[y_var]],
                                           shape= .data$shape,
                                           color = .data[[color_var]]),
-                                      alpha=getOption("tidyGenomeBrowser.alpha"))
+                                      alpha=getOption("tidyGenomeBrowser.alpha"),
+                                      size=getOption("tidyGenomeBrowser.size"))
               }else{
                   o <- o + geom_point(aes(x = .data$pos,
                                           y= .data[[y_var]],
                                           color = .data[[color_var]]),
-                                      alpha=getOption("tidyGenomeBrowser.alpha"))
+                                      alpha=getOption("tidyGenomeBrowser.alpha"),
+                                      size=getOption("tidyGenomeBrowser.size"))
               }
 
               # Add labels
@@ -100,19 +102,21 @@ setMethod("browsePositions", signature(object = "data.frame"),
                   o <- o + geom_text_repel(aes(x=.data$pos,
                                                y=.data[[y_var]],
                                                label=.data$name),
-                                           size= getOption("tidyGenomeBrowser.label")[1],
-                                           nudge_y= getOption("tidyGenomeBrowser.label")[2],
-                                           force= getOption("tidyGenomeBrowser.label")[3],
-                                           min.segment.length= getOption("tidyGenomeBrowser.label")[4],
-                                           fontface=getOption("tidyGenomeBrowser.fontface"),
-                                           direction="y",
+                                           size = getOption("tidyGenomeBrowser.fontsize"),
+                                           nudge_y = getOption("tidyGenomeBrowser.fontnudge"),
+                                           force = getOption("tidyGenomeBrowser.fontforce"),
+                                           force_pull = getOption("tidyGenomeBrowser.fontpull"),
+                                           min.segment.length = getOption("tidyGenomeBrowser.fontsegment"),
+                                           fontface = getOption("tidyGenomeBrowser.fontface"),
+                                           box.padding = getOption("tidyGenomeBrowser.fontpad"),
+                                           direction="y")
                                            # nudge_y= getOption("tidyGenomeBrowser.nudge"),
                                            # size= getOption("tidyGenomeBrowser.size"),
                                            #min.segment.length=  2,
                                            #vjust = 1,
                                            #angle        = 45,
                                            #xlim=c(0.2, 0.8),
-                                           point.padding = NA)
+                                           #point.padding = NA)
                                            # nudge_y = getOption("tidyGenomeBrowser.nudge"),
                                            # direction = "y",
                                            # size= getOption("tidyGenomeBrowser.size"),
