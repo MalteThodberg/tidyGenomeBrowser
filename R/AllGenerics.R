@@ -77,6 +77,26 @@ setGeneric("browseIntervals", function(object, ...) {
     standardGeneric("browseIntervals")
 })
 
+#' Browse genomic segments
+#'
+#' Genome browser-type plot of genomic segments or states.
+#'
+#' @param object GRangesList, GRanges or data.frame: Genomic intervals.
+#' @param region GRanges or NULL: Plotting window.
+#' @param plot logical: Whether to produce a plot or return the plot data.
+#' @param ... not currently used.
+#'
+#' @details browseSegments can react to metadata columns: `color`, `name`, `facet`.
+#'
+#' @return ggplot or data.frame.
+#' @export
+#'
+#' @examples
+#' # TBA
+setGeneric("browseSegments", function(object, ...) {
+    standardGeneric("browseSegments")
+})
+
 #' Browse genomic positions
 #'
 #' Genome browser-type plot of single-bp positions, e.g. VCF-like data.

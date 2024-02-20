@@ -2,6 +2,7 @@
 % Please edit documentation in R/tidyGenomeBrowser.R
 \docType{package}
 \name{tidyGenomeBrowser}
+\alias{tidyGenomeBrowser-package}
 \alias{tidyGenomeBrowser}
 \title{tidyGenomeBrowser package-wide settings.}
 \description{

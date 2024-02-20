@@ -11,11 +11,11 @@
 \usage{
 flattenRegion(region, object)
 
-\S4method{flattenRegion}{`NULL`,GenomicRanges}(region, object)
+\S4method{flattenRegion}{NULL,GenomicRanges}(region, object)
 
-\S4method{flattenRegion}{`NULL`,GenomicRangesList}(region, object)
+\S4method{flattenRegion}{NULL,GenomicRangesList}(region, object)
 
-\S4method{flattenRegion}{`NULL`,GInteractions}(region, object)
+\S4method{flattenRegion}{NULL,GInteractions}(region, object)
 
 \S4method{flattenRegion}{GRanges,ANY}(region, object)
 

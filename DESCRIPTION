@@ -1,7 +1,7 @@
 Package: tidyGenomeBrowser
 Type: Package
 Title: Easy Genome Browser Figures Using R / Bioconductor
-Version: 0.1.5
+Version: 0.1.6
 Author: Malte Thodberg
 Maintainer: Malte Thodberg <maltethodberg@gmail.com>
 Description: More about what it does (maybe more than one line)
@@ -21,7 +21,7 @@ Depends:
     InteractionSet (>= 1.16.0),
     ggplot2 (>= 3.3.0),
     patchwork (>= 1.0.0)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.1
 Imports: 
     methods (>= 4.0.0),
     S4Vectors (>= 0.26.1),

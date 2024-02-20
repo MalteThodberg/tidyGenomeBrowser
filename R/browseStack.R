@@ -42,5 +42,5 @@ browseStack <- function(ggplots, strip=TRUE, squeeze="none", ...){
     #                   #common.legend = sharedLegend,
     #                   legend = "right",
     #                   labels = names(ggplots), ...)
-    patchwork::wrap_plots(ggplots, ncol=1, nrow=l, ...)
+    patchwork::wrap_plots(ggplots, ncol=1, nrow=l, ...) & theme(legend.justification = "left")
 }
